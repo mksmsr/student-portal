@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:context="http://www.springframework.org/schema/context"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+   <context:annotation-config/>
+   <import resource="config/DataSource.xml"/>
+   
+  <bean id="userDAO" class="com.skmm.app.example.dao.UserDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+  <bean id="loginClass" class="com.skmm.app.example.Login"  scope="prototype" >
+		<property name="userService" ref="userService" />
+	</bean>
+	
+	<bean id="sessionFactory" 
+    class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+ 
+    <property name="dataSource" ref="dataSource" />
+        <property name="configLocation">
+            <value>classpath:hibernate.cfg.xml</value>
+        </property>
+        <property name="configurationClass">
+            <value>org.hibernate.cfg.AnnotationConfiguration</value>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${jdbc.dialect}</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+ 
+</bean>
+  <bean id="userService" class="com.skmm.app.example.service.UserServiceImpl" >
+		<property name="userDAO" ref="userDAO" />
+	</bean>
+</beans>
