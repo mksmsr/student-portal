@@ -27,4 +27,14 @@ import com.opensymphony.xwork2.ActionSupport;
  * Base Action class for the Tutorial package.
  */
 public class ExampleSupport extends ActionSupport {
+	
+	public String welcome()
+    {
+        return "welcome";
+    }
+	
+	public String login()
+    {
+        return "login";
+    }
 }

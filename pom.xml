@@ -123,7 +123,7 @@
 			<version>5.1.9</version>
 		</dependency>
 		
-		<!-- spring libraries -->	
+		 <!-- spring libraries 	 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring</artifactId>
@@ -135,12 +135,13 @@
 			<artifactId>spring-web</artifactId>
 			<version>3.0.5.RELEASE</version>
 		</dependency>
-		<!--
-		<dependency>
+		
+		<!--<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web-servlet</artifactId>
 			<version>3.0.5.RELEASE</version>
 		</dependency> 
+		
 		-->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -154,6 +155,12 @@
 			<version>2.3.8</version>
 		</dependency>
 		
+		<dependency>
+	  		<groupId>org.apache.struts</groupId>
+	  		<artifactId>struts2-tiles-plugin</artifactId>
+	  		<version>2.3.8</version>
+	  		<scope>compile</scope>
+		</dependency>
     </dependencies>
 
 

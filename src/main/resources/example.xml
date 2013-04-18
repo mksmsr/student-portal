@@ -8,18 +8,22 @@
 -->
 <struts>
   <package name="example" namespace="/example" extends="struts-default">
-  
+  <result-types>
+            <result-type name="tiles"
+                class="org.apache.struts2.views.tiles.TilesResult" />
+  </result-types>
     <action name="HelloWorld" class="com.skmm.app.example.HelloWorld">
       <result>/example/HelloWorld.jsp</result>
     </action>
 
-    <action name="Login_*" method="execute" class="loginClass">
-      <result name="input">/example/Login.jsp</result>
-      <result type="redirectAction">Menu</result>
+    <action name="Login" method="execute" class="loginClass">
+      <result name="input">/example/Missing.jsp</result>
+      <result type="redirectAction">/example/Menu.jsp</result>
     </action>
 
-    <action name="*" class="com.skmm.app.example.ExampleSupport">
-      <result>/example/{1}.jsp</result>
+    <action name="*WL" method="{1}" class="com.skmm.app.example.ExampleSupport">
+      <result name="welcome" type="tiles">welcome</result>
+      <result name="login" type="tiles">login</result>
     </action>
     
     <!-- Add additional "example" package actions here. -->

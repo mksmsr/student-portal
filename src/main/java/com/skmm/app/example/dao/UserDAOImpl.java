@@ -10,7 +10,7 @@ public class UserDAOImpl extends HibernateDaoSupport  implements UserDAO{
 	
 	@Override
 	public User findByCode(String code) {
-		List findByNamedQuery = getHibernateTemplate().loadAll(User.class);
+		List findByNamedQuery = getHibernateTemplate().find("select u from User u where u.code=?",code);
 		System.out.println(findByNamedQuery);
 		return (User) findByNamedQuery.get(0);
 	}
