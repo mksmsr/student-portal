@@ -14,7 +14,7 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-  <bean id="loginClass" class="com.skmm.app.example.Login"  scope="prototype" >
+  <bean id="loginClass" class="com.skmm.app.example.action.LoginAction"  scope="prototype" >
 		<property name="userService" ref="userService" />
 	</bean>
 	

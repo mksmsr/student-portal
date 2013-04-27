@@ -8,11 +8,21 @@ import com.skmm.app.example.model.User;
 
 public class UserDAOImpl extends HibernateDaoSupport  implements UserDAO{
 	
+	
 	@Override
 	public User findByCode(String code) {
 		List findByNamedQuery = getHibernateTemplate().find("select u from User u where u.code=?",code);
-		System.out.println(findByNamedQuery);
-		return (User) findByNamedQuery.get(0);
+		return findByNamedQuery.size()>0 ? (User) findByNamedQuery.get(0) : null;
+	}
+
+	@Override
+	public void save(User user)throws Exception {
+		getHibernateTemplate().save(user);
+	}
+
+	@Override
+	public boolean isUserAlreadyExist(String code) {
+		return findByCode(code)==null ? false : true;
 	}
 
 }

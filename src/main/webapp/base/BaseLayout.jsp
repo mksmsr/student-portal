@@ -3,27 +3,39 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
 <title><tiles:insertAttribute name="title" ignore="true" /></title>
+<link href="../menu-style.css" rel="stylesheet" type="text/css"></link>
+<link href="../layout.css" rel="stylesheet" type="text/css"></link>
+<link href="../reset.css" rel="stylesheet" type="text/css"></link>
 </head>
 <body>
-<table border="1" cellpadding="2" cellspacing="2">
-    <tr>
-        <td height="30" colspan="2"><tiles:insertAttribute name="header" />
-        </td>
-    </tr>
-    <tr>
-      <td height="30" colspan="2"><tiles:insertAttribute name="topMenu" />
-		</td>
-    </tr>
-    <tr>
-        <td height="250"><tiles:insertAttribute name="sideBar" /></td>
-        <td width="350"><tiles:insertAttribute name="body" /></td>
-    </tr>
-    <tr>
-        <td height="30" colspan="2"><tiles:insertAttribute name="footer" />
-        </td>
-    </tr>
-</table>
+<div id="wrapper">
+        <div id="headerwrap">
+        <div id="header">
+            <tiles:insertAttribute name="header" />
+        </div>
+        </div>
+        <div id="navigationwrap">
+        <div id="navigation">
+             <tiles:insertAttribute name="topMenu" />
+        </div>
+        </div>
+        <div id="contentliquid"><div id="contentwrap">
+        <div id="content">
+			 <tiles:insertAttribute name="body" />
+        </div>
+        </div></div>
+        <div id="leftcolumnwrap">
+        <div id="leftcolumn">
+			<tiles:insertAttribute name="sideBar" />
+        </div>
+        </div>
+        <div id="footerwrap">
+        <div id="footer">
+			<tiles:insertAttribute name="footer" />            
+        </div>
+        </div>
+</div>
 </body>
 </html>

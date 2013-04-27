@@ -1,17 +1,12 @@
 package com.skmm.app.example.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.skmm.app.example.dao.UserDAO;
 import com.skmm.app.example.model.User;
 
-
 public class UserServiceImpl implements UserService {
-	
 
 	UserDAO userDAO;
-	
+
 	public UserDAO getUserDAO() {
 		return userDAO;
 	}
@@ -20,10 +15,19 @@ public class UserServiceImpl implements UserService {
 		this.userDAO = userDAO;
 	}
 
-
 	@Override
 	public User findByCode(String code) {
 		return userDAO.findByCode(code);
 	}
-	
+
+	@Override
+	public void save(User user) throws Exception {
+		userDAO.save(user);
+	}
+
+	@Override
+	public boolean isUserAlreadyExist(String code) {
+		return userDAO.isUserAlreadyExist(code);
+	}
+
 }

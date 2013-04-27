@@ -3,16 +3,5 @@
 <html>
 <head>
     <title>Welcome</title>
-    <link href="<s:url value="/css/examplecss"/>" rel="stylesheet"
-          type="text/css"/>
 </head>
-
-<body>
-<h3>Commands</h3>
-<ul>
-    <li><a href="<s:url action="loginWL"/>">Sign On</a></li>
-    <li><a href="<s:url action="Register"/>">Register</a></li>
-</ul>
-
-</body>
 </html>
