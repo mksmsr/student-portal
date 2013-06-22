@@ -42,4 +42,8 @@ public class ExampleSupport extends ActionSupport {
 	public String register(){
 		return "register";
 	}
+
+	public String resource(){
+		return "resource";
+	}
 }
