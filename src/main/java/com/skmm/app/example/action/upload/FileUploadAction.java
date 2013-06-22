@@ -21,9 +21,6 @@ public class FileUploadAction extends ActionSupport{
 	      destPath = "J:/dev/upload";
 
 	      try{
-	     	 System.out.println("Src File name: " + file);
-	     	 System.out.println("Dst File name: " + fileName);
-	     	    	 
 	     	 File destFile  = new File(destPath, fileName);
 	    	 FileUtils.copyFile(file, destFile);
 	  
